@@ -1,7 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app_final/ui/pages/home_page/home_page.dart';
-import 'package:page_transition/page_transition.dart';
 
 class AnimatedScreen extends StatelessWidget {
   const AnimatedScreen({super.key});
@@ -10,14 +9,14 @@ class AnimatedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       curve: Curves.bounceIn,
-      centered: true,
-      pageTransitionType: PageTransitionType.fade,
+      // centered: true,
+      // pageTransitionType: PageTransitionType.fade,
       splashIconSize: 450,
-      splashTransition: SplashTransition.fadeTransition,
+      // splashTransition: SplashTransition.fadeTransition,
       duration: 3000,
       backgroundColor: Colors.blue,
       splash: 'assets/images/splash.png',
-      disableNavigation: false,
+      // disableNavigation: false,
       nextScreen: const HomePage(),
     );
   }

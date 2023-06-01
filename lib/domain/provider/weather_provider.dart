@@ -37,13 +37,22 @@ class WeatherProvider extends ChangeNotifier {
     setCurrentTime();
     setCurrentTemp();
     setSevenDays();
+    getCurrentZone();
     return weatherData;
+  }
+
+  String currentZone = '';
+  Future<String> getCurrentZone() async {
+    final pref = await SharedPreferences.getInstance();
+    currentZone = pref.getString('city_name') ?? '';
+    print(currentZone);
+    return currentZone;
   }
 
 /*установка текущего города*/
 
   void setCurrentCity(BuildContext context, {String? cityName}) async {
-    if (searchController.text != null && searchController.text != '') {
+    if (searchController.text != '') {
       cityName = searchController.text;
       final pref = await SharedPreferences.getInstance();
       await pref.setString('city_name', cityName);
@@ -89,6 +98,7 @@ class WeatherProvider extends ChangeNotifier {
   String setDailyIcons(int index) {
     final String getIcon = '${weatherData?.daily?[index].weather?[0].icon}';
     final String setIcon = '$_iconUrlPath$getIcon.png';
+
     return setIcon;
   }
 
@@ -342,5 +352,4 @@ class WeatherProvider extends ChangeNotifier {
     box.deleteAt(index);
   }
   //**********************/
-
 }

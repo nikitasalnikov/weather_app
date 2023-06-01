@@ -25,7 +25,7 @@ class WeatherSearchBody extends StatelessWidget {
     final model = Provider.of<WeatherProvider>(context);
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
+      height: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(

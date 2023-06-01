@@ -57,10 +57,10 @@ class WeatherData {
 }
 
 class Current {
-  dynamic dt;
+  dynamic dt; 
   dynamic sunrise;
   dynamic sunset;
-  dynamic temp;
+  dynamic temp; 
   dynamic feelsLike;
   dynamic pressure;
   dynamic humidity;

@@ -37,7 +37,7 @@ class CurrentRegionItem extends StatelessWidget {
           children: [
             CurrentRegionTimeZone(
               currentCity: model.weatherData?.timezone,
-              currentZone: model.weatherData?.timezone,
+              currentZone: model.currentZone,
             ),
             CurrentRegionTemp(
               icon: model.iconData(),
