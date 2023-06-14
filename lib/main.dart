@@ -12,7 +12,7 @@ Future<void> main() async {
       statusBarColor: Colors.transparent,
     ),
   );
- 
+
   await Hive.initFlutter();
   Hive.registerAdapter(FavoriteHistoryAdapter());
   await Hive.openBox<FavoriteHistory>(HiveBoxes.favoriteBox);
@@ -22,4 +22,3 @@ Future<void> main() async {
     const WeatherApp(),
   );
 }
-
